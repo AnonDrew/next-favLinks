@@ -36,7 +36,7 @@ function HomePage(){
 
             
             
-            <Table data={favLinks}/>
+            <Table data={favLinks} dataMutate={setFavLinks}/>
             
 
 

@@ -15,11 +15,12 @@ function Table(props){
             <tbody>
 
                 {
-                    props.data.map((favLink, index ) => {
+                    props.data.map((favLink ) => {
 
-                        return(<tr key={index}>
+                        return(<tr key={favLink.name}>
                             <td>{favLink.name}</td>
                             <td>{favLink.URL}</td>
+                            <td><button id={favLink.name} onClick={e => props.dataMutate(props.data.filter((favL) => favL.name != e.target.getAttribute("id")))}>test</button></td>
                         </tr>)
 
                     })
