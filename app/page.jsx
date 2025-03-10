@@ -17,6 +17,10 @@ function HomePage(){
     function handleNewFavLink(favLink){
         // favlink is an object containing a {name, URL}
 
+        for (const link of favLinks) {
+            if (favLink.name == link.name) return
+        }
+
         console.log(favLink, "in HomePage")
 
         let newFavLinks = [...favLinks, favLink]
