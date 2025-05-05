@@ -10,7 +10,15 @@ import { useState } from "react" // we use this to add state to our components
 import Form from "./components/Form"
 import Table from "./components/Table"
 
-function HomePage(){   
+function HomePage() {
+    async function getData() {
+        let url = "https://localhost:8000/favlinks"
+
+        let response = await fetch(url)
+        let data = await response.json()
+
+        console.log(data)
+    }
 
     const [favLinks, setFavLinks] = useState([])
     
