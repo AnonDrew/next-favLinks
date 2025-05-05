@@ -19,7 +19,7 @@ function Table(props){
 
                         return(<tr key={favLink.name}>
                             <td>{favLink.name}</td>
-                            <td>{favLink.URL}</td>
+                            <td>{favLink.url}</td>
                             <td><button id={favLink.name} onClick={e => props.dataMutate(props.data.filter((favL) => favL.name != e.target.getAttribute("id")))}>remove</button></td>
                         </tr>)
 

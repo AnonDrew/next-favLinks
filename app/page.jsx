@@ -4,21 +4,27 @@
 
 "use client";
 
-import { useState } from "react" // we use this to add state to our components
+import { useState, useEffect } from "react" // we use this to add state to our components
 // state lets us keep track of changing data and show it in the component
 
 import Form from "./components/Form"
 import Table from "./components/Table"
 
 function HomePage() {
+    const [favLinks, setFavLinks] = useState([])
+
     async function getData() {
         let url = "https://localhost:8000/favlinks"
 
         let response = await fetch(url)
         let data = await response.json()
 
-        console.log(data)
+        setFavLinks(data)
     }
+
+    useEffect(() => {
+        getData()
+    }, [])
 
     // async function examplePost() {
     //     const myHeaders = new Headers();
@@ -40,8 +46,6 @@ function HomePage() {
     // }
 
     getData()
-
-    const [favLinks, setFavLinks] = useState([])
     
     function handleNewFavLink(favLink){
         // favlink is an object containing a {name, URL}
