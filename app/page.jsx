@@ -20,6 +20,8 @@ function HomePage() {
         console.log(data)
     }
 
+    getData()
+
     const [favLinks, setFavLinks] = useState([])
     
     function handleNewFavLink(favLink){
