@@ -20,6 +20,25 @@ function HomePage() {
         console.log(data)
     }
 
+    // async function examplePost() {
+    //     const myHeaders = new Headers();
+    //     myHeaders.append("Content-Type", "application/json");
+
+    //     const raw = JSON.stringify({
+    //         "name": name,
+    //         "URL": URL
+    //     });
+
+    //     const requestOptions = {
+    //         method: "POST",
+    //         headers: myHeaders,
+    //         body: raw,
+    //         redirect: "follow"
+    //     };
+
+    //     let response = await fetch("localhost:8000/favLink", requestOptions)
+    // }
+
     getData()
 
     const [favLinks, setFavLinks] = useState([])
